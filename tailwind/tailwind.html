@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Hub · Tailwind</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- ===== Exercițiul 1 · GHIDAT · 5 min · Primele patru proprietăți =====
+         CE FACI: Adaugă scriptul Tailwind în <head>. Apoi aplică pe primul card patru proprietăți CSS pe care le știi, ca clase: padding și border-radius pe card, font-size și margin-bottom pe titlu. Le căutăm împreună în documentație, după numele CSS.
+         E GATA CÂND:
+           [x] Scriptul Tailwind e în <head>
+           [ ] Cardul are spațiu înăuntru și colțuri rotunjite
+           [ ] Titlul e mai mare și are spațiu sub el
+         INDICIU: padding → p-5 · border-radius → rounded-xl · font-size → text-xl · margin-bottom → mb-2. Caută în documentație exact numele CSS: padding, border radius, font size, margin. -->
+  </head>
+
+  <body class="bg-slate-50 text-slate-700">
+    <!-- ==========================================================
+         CAMPUS HUB · VERSIUNEA TAILWIND
+         Aceeași pagină ca Campus Hub, dar fără style.css: tot stilul vine
+         din clase Tailwind. Clasele deja puse sunt gata; tu adaugi doar ce
+         cere fiecare exercițiu, în ordine, lângă blocul lui.
+         Ordinea: Ex. 1-2 proprietăți simple · Ex. 3-4 poziționare și z-index ·
+         Ex. 5-6 flexbox · Ex. 7-8 responsive, desktop-first.
+         Sfat: micșorează fereastra sau mărește zoom-ul ca să vezi pagina derulând.
+         ========================================================== -->
+
+    <!-- ===== Exercițiul 4 · SINGUR · 3 min · Chat-ul fix și header-ul lipit =====
+         CE FACI: Butonul Chat să rămână în colțul din dreapta-jos când derulezi pagina, iar header-ul să rămână sus.
+         E GATA CÂND:
+           [x] Chat-ul stă în colț chiar și când derulezi
+           [x] Header-ul rămâne sus când derulezi
+           [x] Chat-ul și header-ul sunt deasupra restului
+         INDICIU: position: fixed → fixed · bottom: 20px → bottom-5 · right: 20px → right-5 · position: sticky → sticky · top: 0 → top-0 · z-index → z-20 pe chat, z-10 pe header. Derulează pagina sau mărește zoom-ul. -->
+    <!-- ===== Exercițiul 5 · GHIDAT · 4 min · Header: logo la stânga, meniu la dreapta =====
+         CE FACI: Aranjează header-ul pe un rând, centrat pe verticală, cu logo-ul la stânga și meniul la dreapta, apoi pune spațiu între linkurile din meniu.
+         E GATA CÂND:
+           [x] Logo-ul e la stânga, meniul la dreapta
+           [x] Totul e centrat pe verticală
+           [x] Linkurile din meniu au spațiu între ele
+         INDICIU: display: flex → flex · align-items: center → items-center · justify-content: space-between → justify-between · gap: 20px → gap-5 (pe meniu, care devine și el flex). -->
+    <header
+      class="flex justify-between items-center bg-white px-10 py-4 max-lg:px-5 border-b border-slate-200 sticky top-0"
+    >
+      <span class="text-xl font-bold text-blue-600">Campus Hub</span>
+
+      <nav class="flex gap-5">
+        <a href="#" class="text-sm font-medium text-slate-600">Evenimente</a>
+        <a href="#" class="text-sm font-medium text-slate-600">Resurse</a>
+        <a
+          href="../bistro/bistro.html"
+          class="text-sm font-medium text-slate-600"
+          >Bistro</a
+        >
+        <a href="#" class="text-sm font-medium text-slate-600">Contact</a>
+      </nav>
+    </header>
+
+    <section class="px-10 py-40 max-lg:px-5 text-center">
+      <h1 class="text-3xl font-bold text-slate-900">Hackathon Campus Hub</h1>
+      <p class="mt-3 text-slate-500">
+        O zi de proiecte, cod și pizza pentru toți cursanții.
+      </p>
+    </section>
+
+    <section class="px-10 py-8 max-lg:px-5">
+      <h2 class="mb-5 text-2xl font-bold text-slate-900">Evenimente</h2>
+
+      <!-- ===== Exercițiul 7 · GHIDAT · 4 min · Desktop-first: cardurile pe rând, sub tabletă una sub alta =====
+           CE FACI: Pornește de la desktop: cardurile pe un rând, cu spațiu între ele. De la tabletă în jos (sub 1024px) se aranjează unul sub altul, ca la @media (max-width) din sesiunea 6. Apoi adaugă umbra lină la hover, ca în sesiunea 7. Verifică în DevTools, modul telefon.
+           E GATA CÂND:
+             [x] La 1200px cardurile sunt pe un rând
+             [x] La 768px și 375px sunt unul sub altul
+             [ ] Umbra apare lin la hover, ca în sesiunea 7
+           INDICIU: display: flex → flex · gap: 20px → gap-5 · @media (max-width: 1023px) → prefixul max-lg: · flex-direction: column → max-lg:flex-col · box-shadow la :hover → hover:shadow-md, cu transition. -->
+      <div class="flex gap-4 max-md:flex-col">
+        <!-- ===== Exercițiul 2 · SINGUR · 3 min · Alte patru proprietăți simple =====
+             CE FACI: Mai adaugă patru proprietăți CSS simple, singur, căutându-le în documentație: font-weight și color pe titlu, background-color și border pe card. Apoi copiază clasele pe celelalte două carduri.
+             E GATA CÂND:
+               [ ] Titlul e îngroșat și închis la culoare
+               [ ] Cardul are fundal alb și margine subțire
+               [ ] Toate cele trei carduri arată la fel
+             INDICIU: font-weight → font-bold · color → text-slate-800 · background-color → bg-white · border → border border-slate-200. Caută: font weight, text color, background color, border. -->
+        <!-- ===== Exercițiul 3 · GHIDAT · 4 min · Badge-ul „Nou” în colțul cardului =====
+             CE FACI: Pune badge-ul „Nou” în colțul de sus-dreapta al cardului Hackathon: cardul devine punct de reper, badge-ul iese din rând, îl urci și îl muți la dreapta, apoi îl pui deasupra.
+             E GATA CÂND:
+               [x] Badge-ul e în colțul cardului, nu la începutul paginii
+               [x] Badge-ul iese puțin din colț
+               [x] Cardul Hackathon are relative
+             INDICIU: position: relative → relative (pe card) · position: absolute → absolute · top: -8px → -top-2 · right: -4px → -right-1 · z-index: 10 → z-10. Încearcă mai întâi doar absolute și vezi unde pleacă badge-ul. -->
+        <div
+          class="w-full hover:bg-green-100 transition p-[22px] border rounded-4xl bg-white relative"
+        >
+          <span
+            class="rounded-md bg-pink-600 px-1.5 text-sm text-white absolute right-[10px] top-[2px]"
+            >Nou</span
+          >
+
+          <h3 class="text-xl mb-2 font-bold">
+            <i class="fa-solid fa-code"></i> Hackathon
+          </h3>
+          <p class="text-sm text-slate-500">
+            Sâmbătă, <span class="font-bold text-blue-600">10:00</span>
+          </p>
+        </div>
+
+        <div class="w-full p-5 border rounded-4xl bg-white">
+          <h3 class="text-xl mb-2 font-bold">
+            <i class="fa-brands fa-css3-alt"></i> Workshop CSS
+          </h3>
+          <p class="text-sm text-slate-500">
+            Duminică, <span class="font-bold text-blue-600">14:00</span>
+          </p>
+        </div>
+
+        <div class="w-full p-5 border rounded-4xl bg-white">
+          <h3 class="text-xl mb-2 font-bold">
+            <i class="fa-solid fa-users"></i> Meetup
+          </h3>
+          <p class="text-sm text-slate-500">
+            Vineri, <span class="font-bold text-blue-600">18:30</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-10 py-8 max-lg:px-5">
+      <h2 class="mb-5 text-2xl font-bold text-slate-900">
+        Resurse recomandate
+      </h2>
+
+      <!-- ===== Exercițiul 8 · SINGUR · 4 min · Resursele și footer-ul, tot desktop-first =====
+           CE FACI: Aceeași gândire: resursele pe un rând pe desktop și una sub alta de la tabletă în jos, cu umbră lină la hover. Footer-ul pe rând pe desktop și pe coloană de la tabletă în jos.
+           E GATA CÂND:
+             [x] La 1200px resursele sunt pe un rând, iar footer-ul pe rând
+             [x] La 768px și 375px resursele sunt una sub alta, iar footer-ul pe coloană
+             [ ] Resursele au umbră lină la hover
+           INDICIU: Resurse: flex gap-3 max-lg:flex-col, iar pe fiecare element hover:shadow-md transition. Footer: flex items-center justify-between, apoi max-lg:flex-col. -->
+      <ul class="flex gap-4 max-md:flex-col">
+        <li
+          class="hover:shadow-md transition rounded-lg border border-slate-200 bg-white p-4"
+        >
+          Documentația MDN Web Docs
+        </li>
+        <li class="rounded-lg border border-slate-200 bg-white p-4">
+          Ghid complet de HTML pentru începători
+        </li>
+        <li class="rounded-lg border border-slate-200 bg-white p-4">
+          Tailwind CSS · Documentație
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Exercițiul 6 · SINGUR · 3 min · Footer-ul, aranjat la fel =====
+         CE FACI: Aranjează footer-ul ca header-ul: textul la stânga, linkurile la dreapta, centrate pe verticală, cu spațiu între linkuri.
+         E GATA CÂND:
+           [x] Textul e la stânga, linkurile la dreapta
+           [ ] Totul e centrat pe verticală
+           [ ] Linkurile au spațiu între ele
+         INDICIU: Aceleași proprietăți CSS ca la header: display: flex → flex · align-items: center → items-center · justify-content: space-between → justify-between · gap: 16px → gap-4. -->
+    <footer
+      class="flex justify-between items-center bg-white px-10 py-5 max-lg:px-5 border-t border-slate-200 text-sm text-slate-500"
+    >
+      <span>© 2026 Campus Hub</span>
+
+      <nav class="flex gap-[13px]">
+        <a href="#">Termeni</a>
+        <a href="#">Contact</a>
+      </nav>
+    </footer>
+
+    <span
+      class="rounded-md bg-pink-600 px-2 py-0.5 text-white fixed bottom-[100px] right-[100px]"
+      >Chat</span
+    >
+  </body>
+</html>

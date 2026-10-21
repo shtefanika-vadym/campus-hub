@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus HUB</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="variabile.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <span class="logo">Campus Hub</span>
+
+      <nav class="nav-list">
+        <a href="#">Evenimente</a>
+        <a href="#">Resurse</a>
+        <a href="bistro/bistro.html">Bistro</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <h1 class="titlu hero-title">Hackathon Campus Hub</h1>
+
+      <p class="titlu hero-subtitle">
+        O zi de proiecte, cod și pizza pentru toți cursanții.
+      </p>
+
+      <hr class="separator" />
+
+      <img
+        class="hero-img"
+        src="https://www.humaneworld.org/sites/default/files/styles/responsive_3_4_350w/public/2019/03/aa-stinky-tiny-cats.jpg.webp?h=bf654dbc&itok=0CL5qWj7"
+        alt="O pisica"
+      />
+
+      <!-- <br /> -->
+
+      <div></div>
+
+      <a
+        class="btn-link"
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a"
+        target="_blank"
+        >Vezi pagina de înscriere</a
+      >
+
+      <ul class="info-list">
+        <li><i class="fa-solid fa-clock"></i> Sâmbătă, ora 10:00</li>
+        <li><i class="fa-solid fa-location-dot"></i> Sala A2</li>
+        <li><i class="fa-solid fa-laptop"></i> Aduci laptopul</li>
+      </ul>
+
+      <form action="" class="signup-form">
+        <label for="" class="form-label">
+          Email:
+          <input type="text" placeholder="test@gmail.com" class="form-input" />
+        </label>
+
+        <button class="btn-submit">
+          <i class="fa-solid fa-paper-plane"></i> Mă înscriu
+        </button>
+      </form>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Ora</th>
+            <th>Activitate</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>10:00</td>
+            <td>Deschidere</td>
+          </tr>
+          <tr>
+            <td>10:30</td>
+            <td>Hackathon</td>
+          </tr>
+          <tr>
+            <td>13:00</td>
+            <td>Pauză de prânz</td>
+          </tr>
+          <tr>
+            <td>15:00</td>
+            <td>Prezentări</td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td>Premiere</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="separator" />
+
+    <section class="evenimente">
+      <h2>Evenimente</h2>
+
+      <!--
+        De ce <div> pentru carduri? <div> este un container generic de tip BLOCK:
+        ocupă toată lățimea și poate conține alte elemente (titlu, text, etc.).
+        <span> este INLINE: potrivit doar pentru o bucată de text din interiorul
+        unui rând (ex: data evenimentului colorată), nu pentru a grupa un card întreg.
+      -->
+      <div class="card-container">
+        <div class="card">
+          <span class="card-nou">Nou</span>
+
+          <h3><i class="fa-solid fa-code"></i> Hackathon</h3>
+          <p>Sâmbătă, <span class="data">10:00</span></p>
+        </div>
+
+        <div class="card">
+          <h3><i class="fa-brands fa-css3-alt"></i> Workshop CSS</h3>
+          <p>Duminică, <span class="data">14:00</span></p>
+        </div>
+
+        <div class="card">
+          <h3><i class="fa-solid fa-users"></i> Meetup</h3>
+          <p>Vineri, <span class="data">18:30</span></p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="separator" />
+
+    <section class="resources-section">
+      <h2>Resurse recomandate</h2>
+
+      <p class="resource-description">
+        Ce este un <code>&lt;section&gt;</code>? Este un tag folosit pentru a
+        grupa conținut înrudit dintr-o pagină web.
+      </p>
+
+      <ul class="resources-list">
+        <li>
+          <a href="https://developer.mozilla.org" target="_blank"
+            >Documentație MDN Web Docs</a
+          >
+        </li>
+        <li>Ghid complet de HTML pentru începători</li>
+      </ul>
+
+      <iframe
+        class="video-embed"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+        "
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!--
+      TEMA DE ACASĂ (sesiunea 4): footer cu Flexbox.
+      <footer> este tag-ul semantic pentru partea de jos a paginii: îi spune
+      browserului și cititoarelor de ecran "aici se termină pagina".
+      Are două copii directe: un <span> cu textul și un <nav> cu linkurile.
+      Flexbox aranjează doar copiii DIRECȚI, de aceea linkurile stau într-un <nav>.
+    -->
+    <footer class="footer">
+      <span>© 2026 Campus Hub</span>
+
+      <nav class="footer-links">
+        <a href="#">Termeni</a>
+        <a href="#">Contact</a>
+      </nav>
+    </footer>
+
+    <span class="card-nou chat-wid">Chat</span>
+  </body>
+</html>

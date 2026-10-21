@@ -1,0 +1,432 @@
+/* Stiluri Generale */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333333;
+  background-color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header & Navigare */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 40px;
+  border-bottom: 1px solid #e2e8f0;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-list a {
+  color: #475569;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+a {
+  color: #2563eb;
+}
+
+/* Secțiuni și Separatore */
+section {
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.separator {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 20px 40px;
+}
+
+/* Secțiunea Hero / Principală */
+.hero-section {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+/* Diferența dintre pseudo-clasă și pseudo-element:
+   - pseudo-clasa (:hover) stilizează elementul existent într-o anumită stare
+     (ex. când mouse-ul este deasupra lui);
+   - pseudo-elementul (::after) creează o parte nouă, virtuală, a elementului
+     (ex. un emoji adăugat după text, care nu există în HTML). */
+
+/* Pseudo-clasă: la hover se schimbă culoarea */
+.hero-title:hover {
+  color: #2563eb;
+}
+
+/* Pseudo-element: emoji după titlu */
+.hero-title::after {
+  content: " 🎓";
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 400;
+  color: #64748b;
+  margin: 0 0 20px 0;
+}
+
+.hero-img {
+  width: 250px;
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 15px 0;
+
+  top: 100px;
+}
+
+.btn-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eff6ff;
+  color: #2563eb;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+/* Liste de informații */
+.info-list {
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Formular înscriere */
+.signup-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f1f5f9;
+  padding: 16px 24px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-input {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Tabel */
+.schedule-table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 300px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.schedule-table th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.schedule-table td {
+  padding: 12px;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Carduri Evenimente */
+.evenimente h2,
+.resources-section h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* Tema sesiunii 7: transition pe .card (nu pe :hover), ca să meargă și la întoarcere */
+.card {
+  transition:
+    box-shadow 0.3s ease,
+    top 0.3s ease;
+}
+
+.card:hover {
+  position: relative;
+  top: -14px;
+  box-shadow: 0 10px 24px blue;
+}
+
+#card-active {
+  background-color: #1ef23a;
+  right: 14px;
+  z-index: 3;
+}
+
+.card-nou {
+  color: white;
+  padding: 2px 4px;
+  border-radius: 5px;
+  background-color: #fc397d;
+
+  position: absolute;
+  right: -5px;
+  z-index: 2;
+  /* top: -5; */
+}
+
+/* .card */
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.data {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* Secțiunea Resurse */
+.resource-description {
+  color: #475569;
+  max-width: 600px;
+  margin-bottom: 15px;
+}
+
+code {
+  background-color: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.resources-list li {
+  color: #334155;
+}
+
+.video-embed {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.chat-wid {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+}
+
+/* min-width =  */
+/* width = doar daca ecranul === width */
+/* max-width = de la 0 pana la max */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+
+  .nav-list {
+    gap: 12px;
+  }
+
+  section {
+    padding: 24px 20px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .info-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .signup-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-input,
+  .btn-submit {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .btn-submit {
+    justify-content: center;
+  }
+
+  .card-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .chat-wid {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* ==========================================================================
+   Tema sesiunii 7: Campus Hub prinde viață
+   ========================================================================== */
+
+/* Rânduri alternate în agenda evenimentului */
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Badge-ul „Nou” pulsează (doar cel din card, nu și butonul de chat) */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card .card-nou {
+  animation: pulse 1.5s ease infinite;
+}

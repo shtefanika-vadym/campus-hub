@@ -1,0 +1,235 @@
+/* Campus Bistro — stilurile paginii (restul vine din style.css) */
+.bistro-section h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.bistro-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+.bistro-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 14px 20px;
+  color: #334155;
+}
+
+.price {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* Hover pe rânduri (specificitate mai mare, ca să meargă și peste :nth-child) */
+.menu-list .menu-item:hover {
+  background-color: #eff6ff;
+}
+
+/* Insigna din Exercițiul 7 */
+.item-badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Bannerul din Exercițiul 8 */
+.announcement-banner {
+  background-color: #f59e0b;
+  color: #1e293b;
+  text-align: center;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+
+/* ==========================================================================
+   EXERCIȚIILE DE AZI. Scrii codul sub fiecare titlu, în acest fișier.
+   ========================================================================== */
+
+/* ===== Exercițiul 1 · GHIDAT · 3 min · Primul și ultimul rând =====
+   CE FACI: dă primului preparat un fundal crem (#fff7ed) și scoate linia de
+   jos de la ultimul preparat. Nu atingi HTML-ul.
+   E GATA CÂND:
+   [x] Supă de legume are fundal crem
+   [x] Tiramisu nu mai are linie sub el
+   [x] Nu ai adăugat nicio clasă în HTML
+   INDICIU: două reguli noi, una cu :first-child, una cu :last-child. */
+
+.menu-item:first-child {
+  background-color: #fff7ed;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+/* ===== Exercițiul 2 · SINGUR · 3 min · Rânduri alternate =====
+   CE FACI: dă rândurilor pare un fundal gri deschis (#f9fafb), iar rândului
+   al 3-lea text bold și subliniat (text-decoration).
+   E GATA CÂND:
+   [ ] Rândurile 2 și 4 au fundal gri
+   [ ] Salată Caesar e bold și subliniată
+   [ ] Primul rând a rămas crem (de la Ex. 1)
+   INDICIU: :nth-child(even) și :nth-child(3), lipite de paranteze. */
+.menu-item:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.menu-item:nth-child(3) {
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* ===== Exercițiul 3 · GHIDAT · 4 min · Albastrul, scris o singură dată =====
+   CE FACI: logo-ul și prețurile folosesc același albastru, #2563eb, scris
+   direct în CSS. Scoate-l într-o variabilă --color-primary (în :root) și
+   folosește-o în ambele locuri.
+   E GATA CÂND:
+   [x] Logo-ul și prețurile folosesc var(--color-primary)
+   [x] Pagina arată la fel ca înainte
+   [x] Schimbi --color-primary în :root și se schimbă ambele locuri
+   INDICIU: în :root scrii --color-primary: #2563eb; apoi la .logo și .price
+   înlocuiești #2563eb cu var(--color-primary). */
+
+.logo,
+.price {
+  color: var(--color-primary);
+}
+
+/* .price {
+  color: var(--color-primary);
+} */
+
+/* ===== Exercițiul 4 · SINGUR · 5 min · Tema de noapte =====
+   CE FACI: pornești de la :root din Ex. 3. Adaugă --bg, --text și --row-alt,
+   folosește-le la body și la rândurile pare (:nth-child(even) din Ex. 2),
+   apoi pune valorile de noapte.
+   E GATA CÂND:
+   [ ] Pagina are fundal închis și text deschis
+   [ ] Rândurile pare sunt gri închis, se citesc bine
+   [ ] Schimbi valorile în :root și tema se schimbă dintr-un loc
+   INDICIU: noapte = --bg #111827, --text #f9fafb, --row-alt #374151. */
+/* body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.menu-item:nth-child(even) {
+  background-color: var(--row-alt);
+} */
+
+/* ===== Exercițiul 5 · GHIDAT · 3 min · Rândul se schimbă lin la hover =====
+   CE FACI: la hover, rândul din meniu își schimbă fundalul brusc (regula
+   .menu-list .menu-item:hover de mai sus). Adaugă transition pe .menu-item
+   (nu pe :hover), ca schimbarea să dureze 0.3 secunde.
+   E GATA CÂND:
+   [ ] Treci cu mouse-ul peste un rând: culoarea alunecă, nu sare
+   [ ] Mouse-ul pleacă și culoarea revine tot lin
+   [ ] transition e pe .menu-item, nu pe :hover
+   INDICIU: proprietatea care se schimbă e background-color. */
+.menu-item {
+  transition: all 0.3s ease;
+}
+
+/* ===== Exercițiul 6 · SINGUR · 3 min · Linkurile din meniu, la fel de line =====
+   CE FACI: linkurile din meniu (.nav-list a) să devină albastre (#2563eb) la
+   hover, iar schimbarea să dureze 0.3 secunde, lin la intrare și la ieșire.
+   E GATA CÂND:
+   [x] Treci cu mouse-ul peste un link: culoarea alunecă spre albastru
+   [x] Mouse-ul pleacă și culoarea revine lin
+   [x] transition e pe .nav-list a, nu pe :hover
+   INDICIU: două reguli: .nav-list a (cu transition) și .nav-list a:hover. */
+
+.nav-list a:hover {
+  color: #2563eb;
+}
+
+.nav-list a {
+  transition: color 0.3s ease;
+}
+
+/* ===== Exercițiul 7 · GHIDAT · 5 min · Insigna „Specialitatea zilei” pulsează =====
+   CE FACI: decomentează insigna în bistro.html. Creează animația pulse cu
+   @keyframes: insigna începe complet vizibilă, se estompează la mijloc și
+   revine. Apoi atașează animația pe .item-badge.
+   E GATA CÂND:
+   [ ] Insigna pulsează singură, fără mouse
+   [ ] Pulsul se repetă la nesfârșit
+   [ ] Numele din animation e același cu cel din @keyframes
+   INDICIU: 0%, 50% și 100% cu opacity (1 = vizibil, 0.3 = estompat), apoi
+   animation: pulse 1.5s ease infinite; pe .item-badge. */
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    width: 200px;
+  }
+
+  50% {
+    opacity: 0.2;
+    width: 100px;
+  }
+
+  100% {
+    opacity: 1;
+    width: 200px;
+  }
+}
+
+.item-badge {
+  animation: pulse 1.5s ease infinite;
+}
+
+/* ===== Exercițiul 8 · SINGUR · 5 min · Bannerul își schimbă culoarea =====
+   CE FACI: decomentează bannerul în bistro.html. Fă-l să treacă lin de la
+   galben la portocaliu și înapoi, singur, la nesfârșit.
+   E GATA CÂND:
+   [ ] Bannerul își schimbă culoarea singur, fără mouse
+   [ ] La 100% revine la galbenul de la 0% (#f59e0b)
+   [ ] Numele din animation e același cu cel din @keyframes
+   INDICIU: același tipar ca la insignă, dar schimbi background-color:
+   #f59e0b → #ea580c → #f59e0b, cu animation: nume 3s ease infinite; */
+
+@keyframes banner-pulse {
+  0% {
+    background-color: #f59e0b;
+  }
+
+  50% {
+    background-color: #ea580c;
+  }
+
+  100% {
+    background-color: #f59e0b;
+  }
+}
+
+.announcement-banner {
+  animation: banner-pulse 1.5s ease infinite;
+}
