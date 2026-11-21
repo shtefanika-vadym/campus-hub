@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Hub · Evenimente</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="evenimente.css" />
+
+    <script defer src="../js/sesiunea-17.js"></script>
+    <!-- Exercițiul 1: scrie aici, după linkurile către CSS, linia <script defer src="../js/sesiunea-17.js"></script> -->
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="logo" href="../index.html">Campus Hub</a>
+
+      <nav class="nav-list">
+        <a href="evenimente.html">Evenimente</a>
+        <a href="../index.html">Resurse</a>
+        <a href="../bistro/bistro.html">Bistro</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <section class="evenimente">
+      <h2 id="titlu">Evenimente</h2>
+
+      <p id="descriere">Ce se întâmplă în Campus Hub luna aceasta.</p>
+
+      <p>Evenimente în listă: <strong id="contor">3</strong></p>
+
+      <!-- Sesiunea 18: câmpul și butonul de adăugare. Acum doar stau aici; în sesiunea 18 le legăm cu click. -->
+      <div class="signup-form">
+        <input
+          class="form-input"
+          id="input-eveniment"
+          type="text"
+          placeholder="Numele evenimentului"
+        />
+        <button class="btn-submit" id="buton-adauga" type="button">
+          Adaugă
+        </button>
+      </div>
+
+      <!-- Sesiunea 18: fiecare card primește la bază două butoane. Stilurile lor sunt deja în evenimente.css.
+           <div class="card-actions">
+             <button class="btn-edit" type="button">Editează</button>
+             <button class="btn-delete" type="button">Șterge</button>
+           </div>
+      -->
+
+      <div class="card-container" id="lista-evenimente">
+        <!-- <div class="card">
+          <h3>Hackathon</h3>
+          <p>20 locuri · 90 lei</p>
+        </div>
+
+        <div class="card">
+          <h3>Workshop CSS</h3>
+          <p>0 locuri · 40 lei</p>
+        </div>
+
+        <div class="card">
+          <h3>Meetup</h3>
+          <p>35 locuri · 0 lei</p>
+        </div> -->
+      </div>
+    </section>
+  </body>
+</html>
