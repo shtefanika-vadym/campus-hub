@@ -1,0 +1,64 @@
+/* Campus Hub · pagina Evenimente
+   Aspectul de bază (antet, carduri, câmp, buton) vine din ../style.css.
+   Aici sunt doar regulile care nu există acolo. */
+
+/* Cardurile adăugate de JavaScript trec pe rândul următor, nu ies din pagină */
+.card-container {
+  flex-wrap: wrap;
+}
+
+/* Clase pe care JavaScript le pune și le scoate cu classList (sesiunea 17) */
+.epuizat {
+  opacity: 0.45;
+}
+
+.epuizat h3 {
+  text-decoration: line-through;
+}
+
+.recomandat {
+  border: 2px solid #fc397d;
+}
+
+/* ==========================================================================
+   Pregătit pentru sesiunea 18: butoanele de pe carduri.
+   Câmpul și butonul „Adaugă” folosesc clasele din style.css:
+   .signup-form, .form-input, .btn-submit.
+   ========================================================================== */
+
+/* Rândul cu butoanele Editează și Șterge, la baza cardului */
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-edit,
+.btn-delete {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.btn-delete {
+  background-color: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+
+/* Câmpul care apare în card când editezi un eveniment */
+.card-input {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+}
